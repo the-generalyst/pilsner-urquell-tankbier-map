@@ -2,7 +2,7 @@
 
 An interactive map of every bar in Berlin where you can drink **Pilsner Urquell straight from the tank** — unpasteurised "tankové pivo", served the way they pour it in Plzeň.
 
-🔗 **Live site:** _enable GitHub Pages (see below) and your URL will appear here_
+🔗 **Live site:** https://the-generalyst.github.io/pilsner-urquell-tankbier-map/
 
 ## What's on the site
 
