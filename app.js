@@ -467,11 +467,18 @@
     container.innerHTML = brands.map((b) => {
       const isSeed = seedIds.indexOf(b.id) >= 0;
       const checked = isSeed || selectedIds.indexOf(b.id) >= 0;
-      return '<label class="beer-check"><input type="checkbox" value="' + b.id + '"' +
+      const badge = '<span class="beer-logo" style="background:' + b.bg + ";color:" + b.fg + '">' +
+        escapeHtml(b.short) +
+        (b.logo ? '<img src="' + b.logo + '" alt="" onerror="this.style.display=\'none\'">' : "") +
+        "</span>";
+      return '<label class="beer-check' + (checked ? " on" : "") + '">' +
+        '<input type="checkbox" value="' + b.id + '"' +
         (checked ? " checked" : "") + (isSeed ? " disabled" : "") + ">" +
-        '<span class="beer-pill" style="background:' + b.bg + ";color:" + b.fg + '">' +
-        escapeHtml(b.name) + (isSeed ? " ✓" : "") + "</span></label>";
+        badge + '<span class="beer-name">' + escapeHtml(b.name) + (isSeed ? " ✓" : "") + "</span></label>";
     }).join("");
+    container.querySelectorAll("input[type=checkbox]").forEach((cb) => {
+      cb.addEventListener("change", () => cb.closest(".beer-check").classList.toggle("on", cb.checked));
+    });
   }
   function openBeersModal(bar) {
     const modal = document.getElementById("beers-modal");

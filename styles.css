@@ -256,8 +256,18 @@ section { padding: 4.5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
 .beer-field { border: 1.5px solid #d8d0bb; border-radius: 12px; padding: 0.8rem 1rem 1rem; margin-bottom: 1rem; }
 .beer-field legend { font-weight: 600; color: var(--ink); padding: 0 0.4rem; font-size: 0.95rem; }
 .beer-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 0.8rem; margin-bottom: 0.7rem; }
-.beer-check { display: flex; align-items: center; gap: 0.45rem; font-weight: 500; cursor: pointer; margin: 0; font-size: 0.9rem; }
-.beer-check input { width: auto; margin: 0; }
+.beer-check { display: flex; align-items: center; gap: 0.5rem; font-weight: 500; cursor: pointer; margin: 0; font-size: 0.9rem;
+  border: 1.5px solid #e7ded0; border-radius: 10px; padding: 0.4rem 0.5rem; transition: border-color 0.12s, background 0.12s; }
+.beer-check:hover { border-color: var(--gold); }
+.beer-check.on { border-color: var(--green); background: #eef5f0; }
+.beer-check input { width: auto; margin: 0; flex: none; }
+.beer-logo {
+  width: 30px; height: 30px; border-radius: 50%; flex: none; position: relative; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.6rem; font-weight: 700; font-family: "Space Grotesk", sans-serif;
+}
+.beer-logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; }
+.beer-name { font-size: 0.85rem; font-weight: 600; line-height: 1.15; }
 .beer-field input[type="text"], #bm-beer-other { width: 100%; padding: 0.6rem 0.7rem; border: 1.5px solid #d8d0bb; border-radius: 10px; font-family: inherit; font-size: 0.95rem; }
 
 /* ---------- STARS ---------- */
@@ -332,7 +342,7 @@ section { padding: 4.5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
 .modal__hint { font-size: 0.82rem; color: var(--muted); text-align: center; margin: 0.8rem 0 0; }
 
 /* ---------- FOOTER ---------- */
-.footer { text-align: center; padding: 3rem 1.5rem; color: var(--muted); font-size: 0.9rem; max-width: 760px; }
+.footer { text-align: center; padding: 3rem 1.5rem; color: var(--muted); font-size: 0.9rem; max-width: 760px; margin: 0 auto; }
 .footer__credit { font-size: 0.8rem; margin-top: 0.6rem; }
 
 /* ---------- LEAFLET MARKER ---------- */
