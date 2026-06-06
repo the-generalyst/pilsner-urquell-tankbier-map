@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berlin Tankbier Map · Pilsner Urquell from the Tank</title>
-  <meta name="description" content="An interactive map of every bar in Berlin where you can drink Pilsner Urquell straight from the tank — plus what tank beer is, why it tastes better, and crowd-sourced prices." />
+  <title>Tankové Pivo Map · Tank Beer Bars Across Europe</title>
+  <meta name="description" content="An interactive map of bars across Europe serving tank beer (tankové pivo) straight from the tank — Pilsner Urquell, Gambrinus, Kozel, Ursus and more. Learn why tank beer tastes better, see which beers each place pours, and check crowd-sourced prices and ratings." />
 
   <!-- Leaflet (open-source map library, free, no API key) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -20,12 +20,12 @@
 
   <header class="hero">
     <div class="hero__inner">
-      <p class="hero__kicker">Berlin · Pilsner Urquell · Tankové pivo</p>
-      <h1 class="hero__title">Tankbier Map Berlin</h1>
+      <p class="hero__kicker">Europe · Tank beer · Tankové pivo</p>
+      <h1 class="hero__title">Tankové Pivo Map</h1>
       <p class="hero__sub">
-        Find every bar where you can drink Pilsner Urquell straight from the tank —
-        unpasteurised, untouched by CO₂, the way they pour it in Plzeň. Starting in Berlin,
-        growing to any city you add.
+        The community map of bars across Europe serving beer straight from the tank —
+        unpasteurised, untouched by added CO₂, brewery-fresh. Pilsner Urquell, Gambrinus,
+        Kozel, Ursus and beyond. Find a great pour near you, or add one the map is missing.
       </p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#map">Open the map</a>
@@ -41,8 +41,8 @@
       <h2>What is tank beer — and why is it better?</h2>
       <p class="section-sub">
         "Tankové pivo" (tank beer) is unpasteurised lager delivered fresh from the brewery
-        into large copper tanks behind the bar. No keg, no extra CO₂, no long shelf life.
-        Here's why people go out of their way for it.
+        into large tanks behind the bar — a Czech tradition now spreading across Europe.
+        No keg, no added CO₂, no long shelf life. Here's why people go out of their way for it.
       </p>
     </div>
 
@@ -62,7 +62,7 @@
         <div class="card__icon">🌾</div>
         <h3>Unpasteurised &amp; fresh</h3>
         <p>
-          Tankbier is <strong>not pasteurised</strong>. Pasteurisation heats beer to make it
+          Tank beer is <strong>not pasteurised</strong>. Pasteurisation heats beer to make it
           shelf-stable but flattens the delicate hop and malt aromas. Tank beer skips that
           step, so the flavour is fuller and tastes closer to drinking it at the brewery.
         </p>
@@ -70,11 +70,11 @@
 
       <article class="card">
         <div class="card__icon">🚚</div>
-        <h3>From Plzeň in 48 hours</h3>
+        <h3>Brewery-fresh, fast</h3>
         <p>
-          Because it isn't pasteurised, it has to be drunk fast. Tankbier is delivered from
-          the Pilsner Urquell brewery and kept cold, typically reaching the bar
-          <strong>within about 48 hours</strong> and served within days — peak freshness.
+          Because it isn't pasteurised, it has to be drunk fast. Tank beer is delivered
+          straight from the brewery and kept cold, typically reaching the bar
+          <strong>within a couple of days</strong> and served soon after — peak freshness.
         </p>
       </article>
 
@@ -82,7 +82,7 @@
         <div class="card__icon">🍺</div>
         <h3>The proper pour</h3>
         <p>
-          Tankbier is made for the traditional Czech "hladinka" pour — a thick, creamy,
+          Tank beer is made for the traditional Czech "hladinka" pour — a thick, creamy,
           wet foam head poured in one smooth motion. The foam protects the beer and keeps
           it smooth from the first sip to the last.
         </p>
@@ -116,9 +116,9 @@
     <div class="section-head">
       <h2>The map</h2>
       <p class="section-sub">
-        Scroll, zoom and click a tank 🛢️ to see the bar, its address, what people are
-        paying, and how they rate the pour. Found a tank bar that's missing? Add it —
-        in Berlin or any other city.
+        Each marker is colour-coded by the beer it pours. Click one to see the bar, which
+        tank beers it serves, its address, prices and ratings. Found a tank bar anywhere in
+        Europe that's missing? Add it.
       </p>
     </div>
 
@@ -132,8 +132,10 @@
       <button class="btn btn--primary" id="add-bar-btn">＋ Add a tank bar</button>
     </div>
 
+    <div class="brand-legend" id="brand-legend" aria-label="Beer brand legend"></div>
+
     <div class="map-layout">
-      <div id="leaflet-map" aria-label="Map of Berlin tank beer bars"></div>
+      <div id="leaflet-map" aria-label="Map of tank beer bars across Europe"></div>
 
       <aside class="sidebar" id="sidebar">
         <div class="sidebar__head">
@@ -152,13 +154,14 @@
 
   <footer class="footer">
     <p>
-      Built for beer lovers. Bar data is community-maintained and may change — always check
-      with the bar. This is an independent fan project and is not affiliated with Pilsner Urquell
-      or Asahi.
+      Built for beer lovers across Europe. Bars, beers, prices and ratings are
+      community-maintained and may change — always check with the bar. This is an independent
+      project and is not affiliated with any brewery. Brand names and colours belong to their
+      respective owners and are shown only to identify which beer a bar serves.
     </p>
     <p class="footer__credit">
       Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors ·
-      Prices are crowd-sourced and stored in your browser.
+      Contributions are stored in your browser.
     </p>
   </footer>
 
@@ -212,7 +215,7 @@
     <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="add-modal-title">
       <button class="modal__close" data-close-add aria-label="Close">×</button>
       <h3 id="add-modal-title">Add a tank bar</h3>
-      <p class="modal__bar">Know a spot pouring Pilsner Urquell from the tank?</p>
+      <p class="modal__bar">Know a spot pouring beer from the tank? Add it anywhere in Europe.</p>
       <form id="add-bar-form">
         <label>
           Bar name *
@@ -244,6 +247,11 @@
           Neighbourhood (optional)
           <input type="text" id="ab-neighborhood" maxlength="60" placeholder="e.g. Old Town" />
         </label>
+        <fieldset class="beer-field">
+          <legend>Which tank beers are served? *</legend>
+          <div class="beer-checklist" id="ab-beers"></div>
+          <input type="text" id="ab-beer-other" maxlength="60" placeholder="Another brand? Type it here" />
+        </fieldset>
         <label>
           Website (optional)
           <input type="url" id="ab-website" maxlength="200" placeholder="https://…" />
@@ -255,6 +263,26 @@
         <p class="form-error" id="ab-error" hidden></p>
         <button type="submit" class="btn btn--primary btn--block" id="ab-submit">Find on map &amp; add</button>
         <p class="modal__hint">We'll look up the address on the map automatically. Saved in your browser.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Report beers modal -->
+  <div class="modal" id="beers-modal" hidden>
+    <div class="modal__backdrop" data-close-beers></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="beers-modal-title">
+      <button class="modal__close" data-close-beers aria-label="Close">×</button>
+      <h3 id="beers-modal-title">Tank beers served here</h3>
+      <p class="modal__bar" id="beers-modal-bar"></p>
+      <form id="beers-form">
+        <div class="beer-checklist" id="bm-beers"></div>
+        <label>
+          Another brand not listed?
+          <input type="text" id="bm-beer-other" maxlength="60" placeholder="Type a brand name" />
+        </label>
+        <p class="form-error" id="bm-error" hidden>Pick at least one beer or type a brand.</p>
+        <button type="submit" class="btn btn--primary btn--block">Save beers</button>
+        <p class="modal__hint">Saved in your browser and shown on this map. Thanks! 🍻</p>
       </form>
     </div>
   </div>

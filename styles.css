@@ -214,6 +214,43 @@ section { padding: 4.5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
   padding: 0.1rem 0.45rem; border-radius: 999px; margin-left: 0.4rem; vertical-align: middle;
 }
 
+/* ---------- BRANDS ---------- */
+.brand-legend {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;
+}
+.brand-legend__item { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--ink); }
+.brand-dot {
+  width: 20px; height: 20px; border-radius: 50%; display: inline-flex;
+  align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 700;
+  font-family: "Space Grotesk", sans-serif; flex: none;
+}
+.beer-pill {
+  display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.18rem 0.6rem;
+  border-radius: 999px; font-size: 0.82rem; font-weight: 600; font-family: "Space Grotesk", sans-serif;
+  white-space: nowrap;
+}
+.beer-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.2rem 0 0.4rem; }
+
+/* brand-coloured map marker (teardrop) */
+.brand-marker {
+  width: 36px; height: 36px; border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg); border: 3px solid;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+  display: flex; align-items: center; justify-content: center;
+}
+.brand-marker span {
+  transform: rotate(45deg); font-size: 12px; font-weight: 700;
+  font-family: "Space Grotesk", sans-serif; line-height: 1;
+}
+
+/* beer selection checklists */
+.beer-field { border: 1.5px solid #d8d0bb; border-radius: 12px; padding: 0.8rem 1rem 1rem; margin-bottom: 1rem; }
+.beer-field legend { font-weight: 600; color: var(--ink); padding: 0 0.4rem; font-size: 0.95rem; }
+.beer-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 0.8rem; margin-bottom: 0.7rem; }
+.beer-check { display: flex; align-items: center; gap: 0.45rem; font-weight: 500; cursor: pointer; margin: 0; font-size: 0.9rem; }
+.beer-check input { width: auto; margin: 0; }
+.beer-field input[type="text"], #bm-beer-other { width: 100%; padding: 0.6rem 0.7rem; border: 1.5px solid #d8d0bb; border-radius: 10px; font-family: inherit; font-size: 0.95rem; }
+
 /* ---------- STARS ---------- */
 .stars { color: var(--gold); letter-spacing: 0.05em; font-size: 1.05rem; }
 .stars .empty { color: #d8d0bb; }

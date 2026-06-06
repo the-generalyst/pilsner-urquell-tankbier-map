@@ -1,0 +1,12 @@
+[
+  { "id": "pilsner-urquell", "name": "Pilsner Urquell", "short": "PU", "bg": "#00603a", "fg": "#e6cf8b" },
+  { "id": "gambrinus", "name": "Gambrinus", "short": "G", "bg": "#d2122e", "fg": "#ffd200" },
+  { "id": "kozel", "name": "Velkopopovický Kozel", "short": "K", "bg": "#1b1b1b", "fg": "#d4a838" },
+  { "id": "staropramen", "name": "Staropramen", "short": "St", "bg": "#c8102e", "fg": "#ffffff" },
+  { "id": "budvar", "name": "Budweiser Budvar", "short": "BB", "bg": "#0a3d2e", "fg": "#c8a44d" },
+  { "id": "ursus", "name": "Ursus", "short": "Ur", "bg": "#14387f", "fg": "#ffffff" },
+  { "id": "krusovice", "name": "Krušovice", "short": "Kr", "bg": "#9e1b32", "fg": "#f0d27a" },
+  { "id": "bernard", "name": "Bernard", "short": "Be", "bg": "#6b3f1d", "fg": "#f3e3c8" },
+  { "id": "kozel-tmavy", "name": "Kozel Dark", "short": "KD", "bg": "#3a2616", "fg": "#d4a838" },
+  { "id": "other", "name": "Other tank beer", "short": "?", "bg": "#6b6557", "fg": "#ffffff" }
+]
