@@ -222,8 +222,12 @@ section { padding: 4.5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
 .brand-dot {
   width: 20px; height: 20px; border-radius: 50%; display: inline-flex;
   align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 700;
-  font-family: "Space Grotesk", sans-serif; flex: none;
+  font-family: "Space Grotesk", sans-serif; flex: none; position: relative; overflow: hidden;
 }
+.brand-dot--sm {
+  width: 16px; height: 16px; font-size: 0.5rem; vertical-align: middle; margin-right: 0.35rem;
+}
+.brand-dot__logo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; }
 .beer-pill {
   display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.18rem 0.6rem;
   border-radius: 999px; font-size: 0.82rem; font-weight: 600; font-family: "Space Grotesk", sans-serif;
@@ -236,11 +240,16 @@ section { padding: 4.5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
   width: 36px; height: 36px; border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg); border: 3px solid;
   box-shadow: 0 3px 8px rgba(0,0,0,0.35);
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: center; position: relative;
 }
 .brand-marker span {
   transform: rotate(45deg); font-size: 12px; font-weight: 700;
   font-family: "Space Grotesk", sans-serif; line-height: 1;
+}
+.brand-marker__logo {
+  position: absolute; top: 5px; left: 5px; width: 24px; height: 24px;
+  transform: rotate(45deg); background: #fff; border-radius: 50%;
+  object-fit: contain; padding: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
 }
 
 /* beer selection checklists */
