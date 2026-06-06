@@ -1,0 +1,123 @@
+[
+  {
+    "id": "birgit-und-bier",
+    "name": "Birgit & Bier",
+    "address": "Schleusenufer 3, 10997 Berlin",
+    "neighborhood": "Kreuzberg / Treptow",
+    "lat": 52.4975973,
+    "lng": 13.45011,
+    "type": "Biergarten & Club",
+    "note": "Riverside beer garden and open-air club right on the Landwehrkanal. Tankbier with a party atmosphere.",
+    "website": "https://birgitundbier.de"
+  },
+  {
+    "id": "zum-boehmischen-dorf",
+    "name": "Zum Böhmischen Dorf",
+    "address": "Sanderstraße 11, 12047 Berlin",
+    "neighborhood": "Neukölln",
+    "lat": 52.4923371,
+    "lng": 13.4259409,
+    "type": "Bohemian Restaurant",
+    "note": "Czech restaurant in the historic Bohemian quarter of Neukölln (Rixdorf). Classic spot for tank-fresh Pilsner Urquell.",
+    "website": ""
+  },
+  {
+    "id": "zur-fetten-ecke",
+    "name": "Zur Fetten Ecke",
+    "address": "Schlesische Str. 16, 10997 Berlin",
+    "neighborhood": "Kreuzberg",
+    "lat": 52.498984,
+    "lng": 13.4456156,
+    "type": "Kneipe / Pub",
+    "note": "Cozy corner pub near the Spree in Kreuzberg pouring unpasteurised tankbier.",
+    "website": ""
+  },
+  {
+    "id": "inselgarten",
+    "name": "Inselgarten",
+    "address": "Alt-Treptow 6, 12435 Berlin",
+    "neighborhood": "Treptow",
+    "lat": 52.487407,
+    "lng": 13.4813647,
+    "type": "Biergarten",
+    "note": "Beer garden with a holiday feeling near Treptower Park. Featured on the official Pilsner Urquell pub list.",
+    "website": ""
+  },
+  {
+    "id": "kohlenquelle",
+    "name": "Kohlenquelle",
+    "address": "Kopenhagener Str. 16, 10437 Berlin",
+    "neighborhood": "Prenzlauer Berg",
+    "lat": 52.5491878,
+    "lng": 13.4082136,
+    "type": "Kneipe / Pub",
+    "note": "Neighbourhood pub in Prenzlauer Berg with tankovna Pilsner Urquell.",
+    "website": ""
+  },
+  {
+    "id": "schwarzwaldstuben",
+    "name": "Schwarzwaldstuben",
+    "address": "Tucholskystraße 48, 10117 Berlin",
+    "neighborhood": "Mitte",
+    "lat": 52.5276302,
+    "lng": 13.3929964,
+    "type": "Restaurant",
+    "note": "Black-Forest themed restaurant in Mitte, a long-standing tankbier address.",
+    "website": ""
+  },
+  {
+    "id": "tante-lisbeth",
+    "name": "Tante Lisbeth",
+    "address": "Muskauer Str. 49, 10997 Berlin",
+    "neighborhood": "Kreuzberg",
+    "lat": 52.5011885,
+    "lng": 13.4317031,
+    "type": "Kneipe / Pub",
+    "note": "Living-room-style Kreuzberg pub serving tank-fresh Pilsner Urquell.",
+    "website": ""
+  },
+  {
+    "id": "klunkerkranich",
+    "name": "Klunkerkranich",
+    "address": "Karl-Marx-Straße 66, 12043 Berlin",
+    "neighborhood": "Neukölln",
+    "lat": 52.4820886,
+    "lng": 13.4321513,
+    "type": "Rooftop Bar",
+    "note": "Famous rooftop bar atop the Neukölln Arcaden car park. Tankbier with a sunset view over Berlin.",
+    "website": "https://klunkerkranich.org"
+  },
+  {
+    "id": "club-wilde-renate",
+    "name": "Club Wilde Renate",
+    "address": "Alt-Stralau 70, 10245 Berlin",
+    "neighborhood": "Friedrichshain",
+    "lat": 52.4973901,
+    "lng": 13.4653065,
+    "type": "Club",
+    "note": "Iconic Berlin club on the Stralau peninsula. Tankbier for the party crowd.",
+    "website": "https://renate.cc"
+  },
+  {
+    "id": "strandbad-wendenschloss",
+    "name": "Strandbad Wendenschloss",
+    "address": "Möllhausenufer 30, 12557 Berlin",
+    "neighborhood": "Köpenick",
+    "lat": 52.4152491,
+    "lng": 13.5996059,
+    "type": "Lido / Beach Bar",
+    "note": "Lakeside lido on the Dahme. Unpasteurised Pilsner Urquell delivered from the brewery within 48 hours.",
+    "website": "https://strandbad-wendenschloss.berlin"
+  },
+  {
+    "id": "schoene-welle",
+    "name": "Schöne Welle",
+    "address": "Wilhelminenhofstraße 76, 12459 Berlin",
+    "neighborhood": "Oberschöneweide",
+    "lat": 52.4586963,
+    "lng": 13.5255636,
+    "type": "Biergarten",
+    "note": "Beer garden directly at the Kaisersteg with a view over the Spree.",
+    "website": ""
+  }
+]
