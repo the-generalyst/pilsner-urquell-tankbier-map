@@ -313,12 +313,14 @@ section { padding: 4.5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
 .modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
 .modal__panel {
   position: relative; background: #fff; border-radius: var(--radius);
-  padding: 2rem; width: 100%; max-width: 420px; box-shadow: var(--shadow); z-index: 1;
+  padding: 1.5rem 1.75rem 1.75rem; width: 100%; max-width: 420px;
+  max-height: 88vh; overflow-y: auto; box-shadow: var(--shadow); z-index: 1;
 }
-.modal__panel h3 { color: var(--green-dark); margin-bottom: 0.2rem; }
+.modal__panel h3 { color: var(--green-dark); margin-bottom: 0.2rem; padding-right: 1.5rem; }
 .modal__bar { color: var(--gold); font-weight: 700; font-family: "Space Grotesk", sans-serif; margin: 0 0 1.2rem; }
 .modal__close {
-  position: absolute; top: 0.7rem; right: 0.9rem; border: none; background: none;
+  position: sticky; top: 0; float: right; margin: -0.4rem -0.6rem 0 0;
+  border: none; background: none; z-index: 2;
   font-size: 1.8rem; line-height: 1; cursor: pointer; color: var(--muted);
 }
 .modal form label { display: block; margin-bottom: 1rem; font-weight: 600; color: var(--ink); }
