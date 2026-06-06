@@ -57,6 +57,11 @@
   }
   function fmtEuro(n) { return "€" + n.toFixed(2).replace(".", ","); }
 
+  function gmapsUrl(bar) {
+    return "https://www.google.com/maps/search/?api=1&query=" +
+      encodeURIComponent(bar.name + ", " + bar.address + ", " + bar.city);
+  }
+
   function starsHtml(value) {
     const rounded = Math.round(value);
     let out = '<span class="stars" aria-label="' + value.toFixed(1) + ' out of 5">';
@@ -117,7 +122,10 @@
       '<div class="popup-name">' + escapeHtml(bar.name) + "</div>" +
       '<div class="popup-addr">' + escapeHtml(bar.city) + " · " + escapeHtml(bar.address) + "</div>" +
       '<div class="popup-addr">' + lines.join(" &nbsp;·&nbsp; ") + "</div>" +
-      '<button class="popup-btn" data-detail="' + bar.id + '">View &amp; review</button>'
+      '<div class="popup-actions">' +
+        '<button class="popup-btn" data-detail="' + bar.id + '">View &amp; review</button>' +
+        '<a class="popup-link" href="' + gmapsUrl(bar) + '" target="_blank" rel="noopener">Google Maps ↗</a>' +
+      "</div>"
     );
   }
 
@@ -243,6 +251,8 @@
       '<div class="detail__prices"><h4>⭐ Ratings &amp; 💶 prices</h4>' + summary + log + "</div>" +
       '<div style="display:flex; gap:0.6rem; flex-wrap:wrap;">' +
         '<button class="btn btn--primary" id="open-price-modal">＋ Rate / log a price</button>' +
+        '<a class="btn btn--ghost" style="color:var(--green);border-color:var(--green)" href="' +
+          gmapsUrl(bar) + '" target="_blank" rel="noopener">📍 Google Maps ↗</a>' +
         (bar.website ? '<a class="btn btn--ghost" style="color:var(--green);border-color:var(--green)" href="' +
           encodeURI(bar.website) + '" target="_blank" rel="noopener">Website ↗</a>' : "") +
       "</div>";
