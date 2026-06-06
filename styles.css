@@ -151,6 +151,20 @@ section { padding: 4.5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
 
 /* ---------- MAP ---------- */
 .map-section { max-width: 1280px; }
+.map-toolbar {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;
+}
+.city-filter {
+  font-family: "Oswald", sans-serif; font-weight: 600; color: var(--green-dark);
+  display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.city-filter select {
+  font-family: "Source Sans 3", sans-serif; font-weight: 600; text-transform: none;
+  letter-spacing: 0; padding: 0.6rem 0.9rem; border: 1.5px solid #d8d0bb;
+  border-radius: 10px; background: #fff; font-size: 1rem; min-width: 200px; color: var(--ink);
+}
 .map-layout {
   display: grid;
   grid-template-columns: 1fr 340px;
@@ -193,6 +207,26 @@ section { padding: 4.5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
 .bar-item__name { font-weight: 700; font-family: "Oswald", sans-serif; color: var(--green-dark); }
 .bar-item__meta { font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; gap: 0.5rem; }
 .bar-item__price { color: var(--red); font-weight: 600; white-space: nowrap; }
+.bar-item__rating { color: var(--gold); font-weight: 600; white-space: nowrap; }
+.bar-item__badge {
+  display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--green-dark); background: var(--gold-light);
+  padding: 0.1rem 0.45rem; border-radius: 999px; margin-left: 0.4rem; vertical-align: middle;
+}
+
+/* ---------- STARS ---------- */
+.stars { color: var(--gold); letter-spacing: 0.05em; font-size: 1.05rem; }
+.stars .empty { color: #d8d0bb; }
+.star-input { display: inline-flex; gap: 0.15rem; margin-top: 0.35rem; }
+.star-input .star {
+  background: none; border: none; cursor: pointer; font-size: 1.9rem; line-height: 1;
+  color: #d8d0bb; padding: 0 0.05rem; transition: color 0.1s ease, transform 0.1s ease;
+}
+.star-input .star:hover { transform: scale(1.15); }
+.star-input .star.on { color: var(--gold); }
+.form-row { display: flex; gap: 0.8rem; }
+.form-row label { flex: 1; }
+.form-error { color: var(--red); font-size: 0.88rem; font-weight: 600; margin: 0.2rem 0 0.6rem; }
 
 /* ---------- DETAIL ---------- */
 .detail-section { padding-top: 0; }

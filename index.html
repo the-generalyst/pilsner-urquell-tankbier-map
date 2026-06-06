@@ -23,8 +23,9 @@
       <p class="hero__kicker">Berlin · Pilsner Urquell · Tankové pivo</p>
       <h1 class="hero__title">Tankbier Map Berlin</h1>
       <p class="hero__sub">
-        Every bar in Berlin where you can drink Pilsner Urquell straight from the tank —
-        unpasteurised, untouched by CO₂, the way they pour it in Plzeň.
+        Find every bar where you can drink Pilsner Urquell straight from the tank —
+        unpasteurised, untouched by CO₂, the way they pour it in Plzeň. Starting in Berlin,
+        growing to any city you add.
       </p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#map">Open the map</a>
@@ -115,9 +116,20 @@
     <div class="section-head">
       <h2>The map</h2>
       <p class="section-sub">
-        Scroll, zoom and click a tank 🛢️ to see the bar, its address, and what people are
-        paying. Pick a bar to log a price yourself.
+        Scroll, zoom and click a tank 🛢️ to see the bar, its address, what people are
+        paying, and how they rate the pour. Found a tank bar that's missing? Add it —
+        in Berlin or any other city.
       </p>
+    </div>
+
+    <div class="map-toolbar">
+      <label class="city-filter">
+        City
+        <select id="city-filter">
+          <option value="__all">All cities</option>
+        </select>
+      </label>
+      <button class="btn btn--primary" id="add-bar-btn">＋ Add a tank bar</button>
     </div>
 
     <div class="map-layout">
@@ -150,32 +162,99 @@
     </p>
   </footer>
 
-  <!-- Price log modal -->
+  <!-- Price + rating modal -->
   <div class="modal" id="price-modal" hidden>
     <div class="modal__backdrop" data-close></div>
     <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal__close" data-close aria-label="Close">×</button>
-      <h3 id="modal-title">Log a price</h3>
+      <h3 id="modal-title">Price &amp; rating</h3>
       <p class="modal__bar" id="modal-bar-name"></p>
       <form id="price-form">
         <label>
-          Price (€)
-          <input type="number" id="price-input" step="0.10" min="0" max="50" required placeholder="e.g. 4.50" />
+          Rate the beer
+          <span class="star-input" id="star-input" role="radiogroup" aria-label="Rate the beer from 1 to 5 stars">
+            <button type="button" class="star" data-val="1" aria-label="1 star">★</button>
+            <button type="button" class="star" data-val="2" aria-label="2 stars">★</button>
+            <button type="button" class="star" data-val="3" aria-label="3 stars">★</button>
+            <button type="button" class="star" data-val="4" aria-label="4 stars">★</button>
+            <button type="button" class="star" data-val="5" aria-label="5 stars">★</button>
+          </span>
+          <input type="hidden" id="rating-input" value="" />
         </label>
-        <label>
-          Glass size
-          <select id="size-input">
-            <option value="0.3">0.3 L</option>
-            <option value="0.4">0.4 L</option>
-            <option value="0.5" selected>0.5 L</option>
-          </select>
-        </label>
+        <div class="form-row">
+          <label>
+            Price (€)
+            <input type="number" id="price-input" step="0.10" min="0" max="50" placeholder="e.g. 4.50" />
+          </label>
+          <label>
+            Glass size
+            <select id="size-input">
+              <option value="0.3">0.3 L</option>
+              <option value="0.4">0.4 L</option>
+              <option value="0.5" selected>0.5 L</option>
+            </select>
+          </label>
+        </div>
         <label>
           Note (optional)
-          <input type="text" id="note-input" maxlength="80" placeholder="Happy hour, terrace, etc." />
+          <input type="text" id="note-input" maxlength="80" placeholder="Happy hour, terrace, creamy pour…" />
         </label>
-        <button type="submit" class="btn btn--primary btn--block">Save price</button>
+        <p class="form-error" id="price-error" hidden>Add a star rating or a price (or both).</p>
+        <button type="submit" class="btn btn--primary btn--block">Save</button>
         <p class="modal__hint">Saved in your browser and shown on this map. Thanks for contributing! 🍻</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add-a-bar modal -->
+  <div class="modal" id="add-bar-modal" hidden>
+    <div class="modal__backdrop" data-close-add></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="add-modal-title">
+      <button class="modal__close" data-close-add aria-label="Close">×</button>
+      <h3 id="add-modal-title">Add a tank bar</h3>
+      <p class="modal__bar">Know a spot pouring Pilsner Urquell from the tank?</p>
+      <form id="add-bar-form">
+        <label>
+          Bar name *
+          <input type="text" id="ab-name" maxlength="80" required placeholder="e.g. U Zlatého Tygra" />
+        </label>
+        <div class="form-row">
+          <label>
+            City *
+            <input type="text" id="ab-city" maxlength="60" required placeholder="e.g. Prague" />
+          </label>
+          <label>
+            Type
+            <select id="ab-type">
+              <option>Kneipe / Pub</option>
+              <option>Restaurant</option>
+              <option>Biergarten</option>
+              <option>Bar</option>
+              <option>Club</option>
+              <option>Rooftop Bar</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+        <label>
+          Street address *
+          <input type="text" id="ab-address" maxlength="120" required placeholder="Street &amp; number, postcode" />
+        </label>
+        <label>
+          Neighbourhood (optional)
+          <input type="text" id="ab-neighborhood" maxlength="60" placeholder="e.g. Old Town" />
+        </label>
+        <label>
+          Website (optional)
+          <input type="url" id="ab-website" maxlength="200" placeholder="https://…" />
+        </label>
+        <label>
+          A short note (optional)
+          <input type="text" id="ab-note" maxlength="160" placeholder="What's special about it?" />
+        </label>
+        <p class="form-error" id="ab-error" hidden></p>
+        <button type="submit" class="btn btn--primary btn--block" id="ab-submit">Find on map &amp; add</button>
+        <p class="modal__hint">We'll look up the address on the map automatically. Saved in your browser.</p>
       </form>
     </div>
   </div>

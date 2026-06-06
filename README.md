@@ -6,15 +6,19 @@ An interactive map of every bar in Berlin where you can drink **Pilsner Urquell 
 
 ## What's on the site
 
-- **Interactive map** of Berlin (scroll, zoom, click a 🛢️ marker) powered by Leaflet + OpenStreetMap — completely free, no API keys.
+- **Interactive map** (scroll, zoom, click a 🛢️ marker) powered by Leaflet + OpenStreetMap — completely free, no API keys.
 - **Explainer** of what tank beer is and why it tastes better than beer from a standard keg/barrel.
-- **Crowd-sourced prices** — anyone can log what they paid at each bar. Prices are saved in the visitor's own browser and shown on the map (no login, no backend required).
+- **Crowd-sourced prices** — anyone can log what they paid at each bar. The site shows the average and cheapest price per 0.5 L.
+- **Star ratings (1–5)** — visitors rate the quality of the pour; the site shows each bar's average rating. You can leave a rating, a price, or both.
+- **Add your own bars, in any city** — found a tank-beer spot that's missing? Click **"＋ Add a tank bar"**, type the name and address, and it's geocoded automatically and dropped on the map. A **city filter** lets you browse by city as the list grows beyond Berlin.
 
-## How prices work (important)
+## How contributions work (important)
 
-Prices are stored locally in each visitor's browser using `localStorage`. This keeps the site **free to host and requires no server or login**. The trade-off: a price you log is visible on *your* device, not (yet) shared globally between all visitors.
+Prices, ratings and bars you add are stored locally in each visitor's browser using `localStorage`. This keeps the site **free to host and requires no server or login**. The trade-off: what you add is visible on *your* device, not (yet) shared globally between all visitors.
 
-If you later want prices shared across everyone, the easiest upgrade is a free hosted database such as **Supabase** or **Firebase** — the code in `app.js` is structured so the storage functions (`loadPrices` / `addPrice`) can be swapped for an online database. Just ask and this can be wired up.
+If you later want everything shared across everyone, the easiest upgrade is a free hosted database such as **Supabase** or **Firebase** — the code in `app.js` is structured so the storage functions (`loadPrices` / `addReview` / `saveUserBar`) can be swapped for an online database. Just ask and this can be wired up.
+
+Address lookup for new bars uses the free [OpenStreetMap Nominatim](https://nominatim.org/) service directly from the browser — no API key needed.
 
 ## Run it on your own computer
 
