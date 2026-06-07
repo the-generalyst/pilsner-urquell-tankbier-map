@@ -8,5 +8,6 @@
   { "id": "krusovice", "name": "Krušovice", "short": "Kr", "bg": "#9e1b32", "fg": "#f0d27a", "logo": "assets/logos/krusovice.png" },
   { "id": "bernard", "name": "Bernard", "short": "Be", "bg": "#6b3f1d", "fg": "#f3e3c8", "logo": "assets/logos/bernard.png" },
   { "id": "kozel-tmavy", "name": "Kozel Dark", "short": "KD", "bg": "#3a2616", "fg": "#d4a838", "logo": "assets/logos/kozel-tmavy.png" },
+  { "id": "mahou", "name": "Mahou", "short": "Ma", "bg": "#b81f2d", "fg": "#f4cf5e", "logo": "assets/logos/mahou.png" },
   { "id": "other", "name": "Other tank beer", "short": "?", "bg": "#6b6557", "fg": "#ffffff", "logo": "" }
 ]
